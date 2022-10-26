@@ -1,6 +1,6 @@
 REAL QUESTION TO HELP DOING THIS LAB JUST FOCUS AND LEARN MORE TO DO ALL LAB 
 ****************************************************************************
-
+========      all the questions are summarized because of copyright but I have the title and the rest is up to you     ========
 
 SECTION 1.1 : complete all IPv4 configuration
 =============================================
@@ -9,27 +9,17 @@ SECTION 1.2: Layer 2 Technologies in HQ
 =======================================
 
 1) Config EtherChannel SW101.SW102.SW110
-2) On EtherChannels that use a negotiation protocol, tune its mode of operation for the shortest
-link bundling time possible.
-4)Configure Spanning Tree Protocol :
+2)Configure Spanning Tree Protocol :
    -The STP root for VLAN 2000 must be sw101
    -The STP root for VLAN 2001 must be sw102
    -The roots must be elected based on bridge priority
-   -On the three switches, have STP perform cost calculations in 32-bit arithmetic
-   -On the three switches, use the Rapid STP version and ensure that it can achieve rapid
-       convergence on all interconnections between the switches.
-   -On sw110, prevent all current and future access mode interface from being affected by the
-       Proposal/Agreement process
 
 SECTION 1.3: First Hop Redundancy Protocol in HQ
 ================================================
 
 1) Implement an FHRP mechanism on sw101 and sw102 for VLANs 2000 and 2001 :
-  . Use group number 100 for VLAN 2000 and group number 101 for VLAN 2001.
-  . Use the first available IPv4 address in the subnet for the address of the virtual router.
   . For VLAN 2000 - SW101 must be the preferred gateway & for VLAN 2001 - SW102 must be the
-preferred gateway. Do not rely on the IPv4 addresses of the switches as role tiebreakers. The
-role must be determined by an explicit configuration solely on the intended preferred gateway.
+preferred gateway.
   . Each preferred gateway must monitor the reachability of both routers r11 and r12 using the
 loopback IPv4 address of the routers by an ICMP Echo. The reachability is to be verified every 5
 seconds with a timeout of 400 msec. A router must be declared unreachable as soon as it does
@@ -40,8 +30,6 @@ member router.
 
 SECTION 1.4: OSPFv2 between HQ and DC
 ======================================
-1) Complete and correct the OSPF configuration on the switches sw101, sw102, sw201 and
-sw202.
   . Enable OSPFv2 on the redundant interconnections between the DC and HQ sites. Make sure
     that OSPF establishes adjacencies on these interconnections and exchange routing information
     between the DC and HQ sites
@@ -56,16 +44,13 @@ sw202.
 SECTION 1.5: DHCP IPv4 Service for HQ
 =====================================
 1) Enable hosts in HQ VLAN 2000 and VLAN 2001 to obtain their IP configuration via DHCP
-  . On SW211, create IPv4 DHCP pools named hq_2000 and hq_2001 for HQ VLANs 2000 and 2001
+  . On SW211, create IPv4 DHCP pools named SB_2000 and SB_2001 for HQ VLANs 2000 and 2001
     respectively. In each subnet assign addresses from .101 up to .254 inclusively and the
     appropriate gateway to clients.
   . Enable DHCP Snooping on sw110 in VLANs 2000 and 2001 to protect against DHCP related
     attacks.
-  . Place host11 into VLAN 2000 
-  . Place host12 into VLAN 2001
-  . Perform the necessary configuration on switches sw101, sw102, sw110 to enable hosts in VLANs
-    2000 and 2001 to obtain IPv4 configuration through DHCP. The DHCP server running at sw211 in
-    the DC must be referred to by its loopback IPv4 address 10.2.255.211. Do not disable the Option
+  . Place host11 into VLAN 2000 & . Place host12 into VLAN 2001
+  . The DHCP server running at sw211 in  the DC must be referred to by its loopback IPv4 address 10.2.255.211. Do not disable the Option
     82 insertion, and do not enable DHCP Snooping on other switches.
   . Verify that host11 and host12 have the IP connectivity to the Cisco DNA Center, vManage, ISE
     running in the DC using their internal (in Band Connectivity) address.
@@ -80,8 +65,8 @@ SECTION 1.9: Fixing Broken DMVPN between DC and Branches #3 & #4
 ================================================================
 SECTION 1.10: Configuring SD-WAN VPN Route Leaking
 ==================================================
-SECTION 1.11: Onboarding cEdges to VManage and install Certificats for all cEdges
-=================================================================================
+SECTION 1.11: Onboarding cEdges to VManage and install Certificats for all cEdges and test connectivity 
+=======================================================================================================
 
 
 Enjoi :)  SBAI MED
