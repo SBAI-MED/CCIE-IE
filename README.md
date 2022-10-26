@@ -1,2 +1,0 @@
-# CCIE-IE
-TOPOLOGY
